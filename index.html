@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title"
+    content="GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing - Jinyang Bo, Fan Dou, Wenrui Quan, Shangxun Liu, Yang Xu, Yuhe Zhang, Kang Li, Guohua Geng">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <!-- <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI"> -->
+  <!-- TODO: List all authors -->
+  <meta name="author"
+    content="Jinyang Bo, Fan Dou, Wenrui Quan, Shangxun Liu, Yang Xu, Yuhe Zhang, Kang Li, Guohua Geng">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="College of Computer Science, Northwest University, China">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"
+    content="GHPT - Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- Page title -->
+  <title>GHPT - Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing | Academic Research</title>
+
+  <!-- No custom favicon (empty data URL to override cached one) -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "GHPT",
+    "description": "Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Jinyang Bo",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Fan Dou",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Wenrui Quan",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Shangxun Liu",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yang Xu",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yuhe Zhang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Kang Li",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Guohua Geng",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CVPR 2026"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    <!-- "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"], -->
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown removed -->
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <!-- Paper title -->
+              <h1 class="title is-1 publication-title">GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path
+                Tracing</h1>
+              <div class="is-size-5 publication-authors">
+                <!-- TODO: Replace with your paper authors and their personal links -->
+                <span class="author-block">
+                  <a href="https://1benxiaohai1.github.io/about/" target="_blank">Jinyang Bo</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a target="_blank">Fan Dou</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a target="_blank">Wenrui Quan</a>,</span>
+                <span class="author-block">
+                  <a target="_blank">Shangxun Liu</a>,</span>
+                <span class="author-block">
+                  <a href="https://sapphiresoul.github.io/" target="_blank">Yang Xu</a><sup>†</sup>,</span>
+                <span class="author-block">
+                  <a target="_blank">Yuhe Zhang</a>,</span>
+                <span class="author-block">
+                  <a target="_blank">Kang Li</a>,</span>
+                <span class="author-block">
+                  <a target="_blank">Guohua Geng</a></span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <!-- TODO: Replace with your institution and conference/journal info -->
+                <span class="author-block">College of Computer Science, Northwest University, China<br>CVPR 2026</span>
+                <!-- TODO: Remove this line if no equal contribution -->
+                <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution,<sup>†</sup>Indicates
+                    Corresponding
+                    author</small></span>
+
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- TODO: Update with your arXiv paper ID -->
+                  <span class="link-block">
+                    <a href="static/pdfs/GHPT_paper.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: Add your supplementary material PDF or remove this section -->
+                  <span class="link-block">
+                    <a href="static/pdfs/GHPT_supplementary.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/1BenXiaoHai1/GHPT" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Teaser image-->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <!-- TODO: Replace with your teaser image -->
+          <img src="./static/images/teaser.png" alt="Teaser image of our method" loading="lazy" />
+          <!-- TODO: Replace with your image description -->
+          <h2 class="subtitle has-text-centered">
+            Real-time Gaussian splatting relighting and composition
+            under the City environment map. 113 fps at 1920×1080, NVIDIA
+            GeForce RTX 4080.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End teaser image -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <!-- TODO: Replace with your paper abstract -->
+              <p>
+                3D Gaussian splatting (3DGS) has emerged as a promising approach for high-fidelity 3D scene
+                representation. However,relighting and composition of Gaussian splatting remain challenging because path
+                tracing is not directly applicable. Existing relighting methods for Gaussian splatting typically adopt
+                either approximate rendering formulations or rely on Gaussian ray tracing, yielding low relighting
+                performance and low rendering efficiency. To address these limitations,we propose Gaussian hybrid path
+                tracing (GHPT), a three stage framework to acquire relightable Gaussian splatting models. The first
+                stage utilizes planar-based Gaussian splatting reconstruction representation (PGSR) to enable multi-view
+                consistent depth rendering and reconstruct the surface mesh of a scene. The second stage performs
+                physically-based differentiable rendering on the obtained mesh to reconstruct the material maps and the
+                environment map. The third stage utilizes factorized inverse path tracing (FIPT) on the Gbuffer rendered
+                by the PGSR, and visibility and indirect illu mination are evaluated by hardware-accelerated ray tracing
+                on the mesh with the material maps and the environment map reconstructed in the second stage.
+                Experiments demonstrate that the relighting performance of GHPT outperforms the baselines, and our
+                method can perform real-time relighting and composition of Gaussian splatting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <!-- Paper Pipeline -->
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <div class="level-set has-text-justified">
+                <p>
+                  Our three-stage GS-based inverse rendering pipeline using hybrid path tracing. In the first stage, the
+                  scene geometry is
+                  reconstructed from multi-view images through planar-based Gaussians guided by normal priors. The
+                  second stage employs physically-based
+                  differentiable rendering to recover material properties of the mesh and the environment map. In the
+                  final stage, we use FIPT to recover
+                  material property of each Gaussian and take into account visibility and indirect illumination by ray
+                  tracing the underlying mesh.
+                </p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- End paper pipeline -->
+
+    <!-- Paper pipeline image -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img src="./static/images/pipeline.png"
+            alt="Our three-stage GS-based inverse rendering pipeline using hybrid path tracing" loading="lazy" />
+          <h2 class="subtitle has-text-centered">
+            <b>Three-stage GS-based inverse rendering pipeline.</b>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!--Qualitative  Results -->
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <div class="level-set has-text-justified">
+                <p>
+                  Qualitative comparison of relighting results under different environment maps on the Synthetic4Relight
+                  and TensoIR Synthetic datasets.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- End  Qualitative Results -->
+
+    <!-- Qualitative Results Images  -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel results-carousel-small">
+            <div class="item">
+              <!-- TODO: Replace with your research result images -->
+              <img src="static/images/Qualitative_results_on_Syn4Relight.png" alt="First research result visualization"
+                loading="lazy" />
+              <!-- TODO: Replace with description of this result -->
+              <h2 class="subtitle has-text-centered">
+                Qualitative comparison of relighting results under different environment maps on Synthetic4Relight
+                dataset.
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/Qualitative_results_on_Tensoir.png" alt="Second research result visualization"
+                loading="lazy" />
+              <h2 class="subtitle has-text-centered">
+                Qualitative comparison of relighting results under different environment maps on TensoIR Synthetic
+                dataset.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End Qualitative Results Images  -->
+
+    <!-- Quantitative Results -->
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <div class="level-set has-text-justified">
+                <p>
+                  Quantitative comparison on the Synthetic4Relight and TensoIR Synthetic datasets.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- End Quantitative Results-->
+
+    <!-- Quantitative Results Images  -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img src="./static/images/Quantitative_results.png" alt="Quantitative results on Synthetic4Relight dataset"
+            loading="lazy" />
+        </div>
+      </div>
+    </section>
+    <!--End Quantitative Results Images -->
+
+    <!-- Relighting and Composition Results -->
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <div class="level-set has-text-justified">
+                <p>
+                  Real-time relighting and composition results in the Garden, Kitchen, and Room scenes. From left to
+                  right: results without path tracing, results of our method, and results of our method relit by two
+                  environment maps, Bridge
+                  and Fireplace. Our method can produce more realistic results due to the presence of shadows and
+                  indirect illumination.
+                </p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img src="./static/images/Real-time_relighting_and_composition_results.png"
+            alt="Real-time relighting and composition results" loading="lazy" />
+          <h2 class="subtitle has-text-centered">
+            <b>Real-time relighting and composition results</b>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Youtube video -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container">
+          <!-- Paper video. -->
+          <h2 class="title is-3">Video Presentation</h2>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+
+              <div class="publication-video">
+                <!-- TODO: Replace with your YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/Cu2BLSbUhaY" frameborder="0"
+                  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End youtube video -->
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{Bo2026GHPT,
+  title={GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing},
+  author={Bo, Jinyang and Dou, Fan and Quan, Wenrui and Liu, Shangxun and Xu, Yang and Zhang, Yuhe and Li, Kang and Geng,
+  Guohua},
+  Conference={IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2026}
+}</code></pre>
+      </div>
+    </section>
+    <!--End BibTex citation -->
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+
+              <p>
+                This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                  href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                You are free to borrow the source code of this website, we just ask that you link back to this page in
+                the footer. <br> This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
